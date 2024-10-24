@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom'
 export default function Product({ product }) {
 
     return <>
-        <div className="w-full max-w-[350px] mx-2 max-h-fit mb-4 bg-white border border-gray-200 rounded-lg shadow">
+        <div className="w-full max-w-[350px] mx-2 mb-4 bg-white border border-gray-200 rounded-lg shadow">
             <Link to={`/productdetails/${product.id}/${product.category}`}>
-                <img className="p-8 rounded-t-lg" src={product.image} alt={product.title} />
+                <img className="p-8 rounded-t-lg max-h-[350px]" src={product.image} alt={product.title} />
             </Link>
             <div className="px-5 pb-5">
                 <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">{product?.category}</span>
                 <a href="#">
-                    <h2 className="text-xl font-semibold tracking-tight text-gray-900 ">{product.title}</h2>
+                    <h2 className="text-xl font-semibold tracking-tight text-gray-900 ">{product.title.split(' ').slice(0, 4).join(' ')}</h2>
                 </a>
                 <div className="flex items-center mt-2.5 mb-5">
                     <div className="flex items-center space-x-1 rtl:space-x-reverse">
